@@ -10,7 +10,7 @@ const LatestCollection = () => {
     console.log(products);
 
     useEffect(() => {
-         setLatestProducts(products.slice(0, 3)); //CHANGE FOR NUMBER OF VISIBLE PRODUCTS UNDER LATEST COLLECTIONS
+         setLatestProducts(products.slice(0, 10)); //CHANGE FOR NUMBER OF VISIBLE PRODUCTS UNDER LATEST COLLECTIONS
     },[])
     
     
