@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {assets} from '../assets/assets'
 import { Link, NavLink } from 'react-router-dom' 
+import Title from './Title';
 
 const Navbar = () => {
 
@@ -11,7 +12,13 @@ const Navbar = () => {
       <Link to='/'>
         <img src={assets.logo} className='w-36' alt="" />
       </Link>
-        
+      {/* Name of Store */}
+      <div className='open-sans-default text-center text-3xl py-8'>
+        <Title text1={'Music'} text2={'Stop'}/>
+        <p className='w-4/4 m-auto text-xs sm:text-sm md:text-base text-gray-700'>
+        Your favorite instruments for less! 
+        </p>
+      </div>
 
         <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
 
