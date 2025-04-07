@@ -20,10 +20,10 @@ export const assets = {
 export const products = [
   {
     id: 1,
-    name: 'Product 1',
-    price: 29.99,
+    name: 'Violin',
+    price: 1099.99,
     image: 'https://via.placeholder.com/150',
-    description: 'This is a great product.'
+    description: 'This finely polished Violin is perfect for Beginners, Amatuers, and Professionals.'
   },
   {
     id: 2,
