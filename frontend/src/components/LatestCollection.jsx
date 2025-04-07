@@ -7,9 +7,10 @@ const LatestCollection = () => {
 
     const {products} = useContext(ShopContext);
     const [latestProducts, setLatestProducts] = useState([]);
+    console.log(products);
 
     useEffect(() => {
-         setLatestProducts(products.slice(0, 3));
+         setLatestProducts(products.slice(0, 3)); //CHANGE FOR NUMBER OF VISIBLE PRODUCTS UNDER LATEST COLLECTIONS
     },[])
     
     
