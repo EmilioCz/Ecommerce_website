@@ -24,7 +24,20 @@ const Footer = () => {
             </u1>
         </div>
 
+        <div>
+            <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
+            <ul className='flex flex-col gap-1 text-gray-600'>
+                <li>+1-806-777-7777</li>
+                <li>emcervan@ttu.edu</li>
+            </ul>
+        </div>
+        
       </div>
+
+        <div>
+          <hr />
+          <p className='py-5 text-sm text-center'>Copyright 2025@ MusicStop.com - All Rights Reserved.</p>
+        </div>
     </div>
   )
 }

@@ -18,6 +18,7 @@ import product10 from './product10.png';
 import exchange_icon from './exchange_icon.png';
 import quality_icon from './quality_icon.png';
 import support_img from './support_img.png';
+import delete_icon from './delete_icon.png';
 
 export const assets = {
     // Add more assets as needed
@@ -40,7 +41,8 @@ export const assets = {
   product10,
   exchange_icon,
   quality_icon,
-  support_img
+  support_img,
+  delete_icon
 }
 
 export const products = [
@@ -50,6 +52,8 @@ export const products = [
     price: 1099.99,
     image: ['/src/assets/product1.png'],
     description: 'This finely polished Violin is perfect for Beginners, Amatuers, and Professionals.',
+    category: "String",
+    subcategory: "BestSellers",
     bestseller: true
   },
   {
@@ -58,6 +62,8 @@ export const products = [
     price: 1999.99,
     image: ['/src/assets/product2.png'],
     description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    category: "String",
+    subcategory: "NotBestSellers",
     bestseller: false
   },
   {
@@ -66,6 +72,8 @@ export const products = [
     price: 199.99,
     image: ['/src/assets/product3.png'],
     description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    category: "Remainder",
+    subcategory: "BestSellers",
     bestseller: true
   },
   {
@@ -74,6 +82,8 @@ export const products = [
     price: 1499.99,
     image: ['/src/assets/product4.png'],
     description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    category: "Wind",
+    subcategory: "NotBestSellers",
     bestseller: false
   },
   {
@@ -82,6 +92,8 @@ export const products = [
     price: 2999.99,
     image: ['/src/assets/product5.png'],
     description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    category: "Wind",
+    subcategory: "BestSellers",
     bestseller: true
   },
   {
@@ -90,6 +102,8 @@ export const products = [
     price: 399.99,
     image: ['/src/assets/product6.png'],
     description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    category: "Remainder",
+    subcategory: "BestSellers",
     bestseller: true
   },
   {
@@ -98,6 +112,8 @@ export const products = [
     price: 499.99,
     image: ['/src/assets/product7.png'],
     description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    category: "String",
+    subcategory: "BestSellers",
     bestseller: true
   },
   {
@@ -106,6 +122,8 @@ export const products = [
     price: 699.99,
     image: ['/src/assets/product8.png'],
     description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    category: "String",
+    subcategory: "NotBestSellers",
     bestseller: false
   },
   {
@@ -114,6 +132,8 @@ export const products = [
     price: 1999.99,
     image: ['/src/assets/product9.png'],
     description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    category: "Wind",
+    subcategory: "NotBestSellers",
     bestseller: false
   },
   {
@@ -122,6 +142,8 @@ export const products = [
     price: 249.99,
     image: ['/src/assets/product10.png'],
     description: 'This is yet another great product.',
+    category: "Wind",
+    subcategory: "NotBestSellers",
     bestseller: false
   }
     
