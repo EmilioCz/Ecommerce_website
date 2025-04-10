@@ -11,7 +11,6 @@ const Product = () => {
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState('');
   const [size, setSize] = useState('');
-  const [color, setColor] = useState('');
 
 
   const fetchProductData = async () => {
@@ -73,28 +72,9 @@ const Product = () => {
               ))}
 
             </div>
-            {
-                Array.isArray(productData.colors) && productData.colors.length > 0 && (
-                  <div className='flex flex-col gap-4'>
-                    <p>Select Color</p>
-                    <div className='flex gap-2'>
-                      {productData.colors.map((item, index) => (
-                        <button 
-                          onClick={() => setColor(item)} 
-                          className={`border py-2 px-4 bg-gray-300 ${item === color ? 'border-red-500' : ''}`} 
-                          key={index}
-                        >
-                          {item}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )
-            }
-
           </div>
           
-          <button onClick={()=>addToCart(productData._id, size, color)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
+          <button onClick={()=>addToCart(productData._id, size)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
           <hr className='mt-8 sm:w-4/5'/>
           <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
             <p>Customers love our instruments, and rate this product 4 out of 5 stars!</p>
@@ -112,7 +92,7 @@ const Product = () => {
         </div>
         <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
           <p>These instruments are packaged & sold with care and love. Each instrument provides rich sounds </p>
-          <p>Each instrument comes in a variety of sizes, and colors.</p>      
+          <p>Each instrument comes in a few of sizes for everyone to enjoy.</p>      
         </div>
       </div>
 

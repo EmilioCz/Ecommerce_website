@@ -59,7 +59,6 @@ export const products = [
     category: "String",
     subcategory: "BestSellers",
     sizes: ["M", "L", "XL"],
-    colors: ["Black", "Blue", "Pink", "Red", "Gray"],
     bestseller: true
   },
   {
@@ -71,7 +70,6 @@ export const products = [
     category: "String",
     subcategory: "NotBestSellers",
     sizes: ["M", "L", "XL"],
-    colors: ["Black", "Blue", "Pink", "Red", "Gray"],
     bestseller: false
   },
   {
@@ -83,7 +81,6 @@ export const products = [
     category: "Remainder",
     subcategory: "BestSellers",
     sizes: ["M", "L", "XL"],
-    colors: ["Black", "Blue", "Pink", "Red", "Gray"],
     bestseller: true
   },
   {
@@ -95,7 +92,6 @@ export const products = [
     category: "Wind",
     subcategory: "NotBestSellers",
     sizes: ["M", "L", "XL"],
-    colors: ["Black", "Blue", "Pink", "Red", "Gray"],
     bestseller: false
   },
   {
@@ -107,7 +103,6 @@ export const products = [
     category: "Wind",
     subcategory: "BestSellers",
     sizes: ["M", "L", "XL"],
-    colors: ["Black", "Blue", "Pink", "Red", "Gray"],
     bestseller: true
   },
   {
@@ -119,7 +114,6 @@ export const products = [
     category: "Remainder",
     subcategory: "BestSellers",
     sizes: ["M", "L", "XL"],
-    colors: ["Black", "Blue", "Pink", "Red", "Gray"],
     bestseller: true
   },
   {
@@ -131,7 +125,6 @@ export const products = [
     category: "String",
     subcategory: "BestSellers",
     sizes: ["M", "L", "XL"],
-    colors: ["Black", "Blue", "Pink", "Red", "Gray"],
     bestseller: true
   },
   {
@@ -143,7 +136,6 @@ export const products = [
     category: "String",
     subcategory: "NotBestSellers",
     sizes: ["M", "L", "XL"],
-    colors: ["Black", "Blue", "Pink", "Red", "Gray"],
     bestseller: false
   },
   {
@@ -155,7 +147,6 @@ export const products = [
     category: "Wind",
     subcategory: "NotBestSellers",
     sizes: ["M", "L", "XL"],
-    colors: ["Black", "Blue", "Pink", "Red", "Gray"],
     bestseller: false
   },
   {
@@ -167,7 +158,6 @@ export const products = [
     category: "Wind",
     subcategory: "NotBestSellers",
     sizes: ["M", "L", "XL"],
-    colors: ["Black", "Blue", "Pink", "Red", "Gray"],
     bestseller: false
   }
     

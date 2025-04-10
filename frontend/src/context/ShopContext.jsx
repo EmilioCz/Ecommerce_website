@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { products } from "../assets/assets";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
  
  export const ShopContext = createContext();
@@ -11,48 +13,83 @@ import { products } from "../assets/assets";
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
+    const navigate = useNavigate();
 
-    const addToCart = async (itemId, size, color) => {
+    const addToCart = async (itemId, size) => {
         let cartData = structuredClone(cartItems);
-    
+        
+        if (!size) {
+            toast.error('Please select a size!');
+            return;
+        }
+
         if (cartData[itemId]) {
             if (cartData[itemId][size]) {
-                if (color) {
-                    if (cartData[itemId][size][color]) {
-                        cartData[itemId][size][color] += 1;
-                    } else {
-                        cartData[itemId][size][color] = 1;
-                    }
-                } else {
-                    cartData[itemId][size] += 1;
-                }
-            } else {
-                if (color) {
-                    cartData[itemId][size] = { [color]: 1 };
-                } else {
-                    cartData[itemId][size] = 1;
-                }
+                cartData[itemId][size] += 1;
             }
-        } else {
-            if (color) {
-                cartData[itemId] = { [size]: { [color]: 1 } };
-            } else {
-                cartData[itemId] = { [size]: 1 };
+            else{
+                cartData[itemId][size] = 1;
             }
         }
-    
+        else{
+            cartData[itemId] = {};
+            cartData[itemId][size] = 1;
+        }
         setCartItems(cartData);
     }
 
-    useEffect(()=>{
-        console.log(cartItems);
 
-    },[cartItems])
+
+    const getCartCount = () => {
+        let totalCount = 0;
+        for(const items in cartItems){
+            for(const item in cartItems[items]){
+                try {
+                    if (cartItems[items][item] > 0) {
+                        totalCount += cartItems[items][item];
+                    }
+
+                } catch (error) {
+                    
+                }
+            }
+        }
+        return totalCount;
+    }
+
+    const updateQuantity = async (itemId,size,quantity) => {
+        
+        let cartData = structuredClone(cartItems);
+
+        cartData[itemId][size] = quantity;
+
+        setCartItems(cartData);
+    }
+
+    const getCartAmount = () => {
+        let totalAmount = 0;
+        for(const items in cartItems){
+            let itemInfo = products.find((product)=> product._id === items);
+            for(const item in cartItems[items]){
+                try {
+                    if (cartItems[items][item] > 0) {
+                        totalAmount += itemInfo.price * cartItems[items][item];
+                    }
+
+                } catch (error) {
+                    
+                }
+            }
+        }
+        return totalAmount;
+    }
 
     const value  =  {
         products, currency, delivery_fee,
         search, setSearch, showSearch, setShowSearch,
-        cartItems, addToCart
+        cartItems, addToCart,
+        getCartCount, updateQuantity,
+        getCartAmount, navigate
     }
 
     return (
