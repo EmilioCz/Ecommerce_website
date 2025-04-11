@@ -21,6 +21,10 @@ import support_img from './support_img.png';
 import delete_icon from './delete_icon.png';
 import star_icon from './star_icon.png';
 import dullstar_icon from './dullstar_icon.png';
+import stripe_logo from './stripe_logo.png';
+import razorpay_logo from './razorpay_logo.png';
+import EmilioLinkedInPic from './EmilioLinkedInPic.jpg';
+import contact_img from './contact_img.png';
 
 export const assets = {
     // Add more assets as needed
@@ -46,7 +50,11 @@ export const assets = {
   support_img,
   delete_icon,
   star_icon,
-  dullstar_icon
+  dullstar_icon,
+  stripe_logo,
+  razorpay_logo,
+  EmilioLinkedInPic,
+  contact_img
 }
 
 export const products = [
@@ -77,7 +85,7 @@ export const products = [
     name: 'Electronic Keyboard',
     price: 199.99,
     image: ['/src/assets/product3.png'],
-    description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    description: 'This sleek-designed keyboard contains over 300+ voices and rythyms',
     category: "Remainder",
     subcategory: "BestSellers",
     sizes: ["M", "L", "XL"],
@@ -88,7 +96,7 @@ export const products = [
     name: 'Saxophone',
     price: 1499.99,
     image: ['/src/assets/product4.png'],
-    description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    description: 'This Golden Saxophone is perfect for Jazz, Blues, and Classical music.',
     category: "Wind",
     subcategory: "NotBestSellers",
     sizes: ["M", "L", "XL"],
@@ -99,7 +107,7 @@ export const products = [
     name: 'Accordion',
     price: 2999.99,
     image: ['/src/assets/product5.png'],
-    description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    description: 'This 31-key Accordion is perfect for everyone. Containing 5 switches and lightweight play',
     category: "Wind",
     subcategory: "BestSellers",
     sizes: ["M", "L", "XL"],
@@ -110,7 +118,7 @@ export const products = [
     name: 'Drum Set',
     price: 399.99,
     image: ['/src/assets/product6.png'],
-    description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    description: 'This Drum Set provides loud, rich sound. Perfect for all levels of players',
     category: "Remainder",
     subcategory: "BestSellers",
     sizes: ["M", "L", "XL"],
@@ -121,7 +129,7 @@ export const products = [
     name: 'Bass Guitar',
     price: 499.99,
     image: ['/src/assets/product7.png'],
-    description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    description: 'This Bass Guitar provides a nice groovy sound. Perfect for all musicians',
     category: "String",
     subcategory: "BestSellers",
     sizes: ["M", "L", "XL"],
@@ -132,7 +140,7 @@ export const products = [
     name: 'Steel Guitar',
     price: 699.99,
     image: ['/src/assets/product8.png'],
-    description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    description: 'This Steel Guitar is one of a kind, where you can play Santo and Johnnys classic "Sleepwalk"',
     category: "String",
     subcategory: "NotBestSellers",
     sizes: ["M", "L", "XL"],
@@ -143,7 +151,7 @@ export const products = [
     name: 'Clarinet',
     price: 1999.99,
     image: ['/src/assets/product9.png'],
-    description: 'This beautifully crafted wooden Cello provides rich, loud accoustic sound.',
+    description: 'This Clarinet made from high-quality wood provides rich, loud accoustic sound.',
     category: "Wind",
     subcategory: "NotBestSellers",
     sizes: ["M", "L", "XL"],
@@ -154,7 +162,7 @@ export const products = [
     name: 'Trumpet',
     price: 249.99,
     image: ['/src/assets/product10.png'],
-    description: 'This is yet another great product.',
+    description: 'This Trumpet is perfect for Jazz, Blues, and Classical music.',
     category: "Wind",
     subcategory: "NotBestSellers",
     sizes: ["M", "L", "XL"],
