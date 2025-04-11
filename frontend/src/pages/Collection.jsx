@@ -1,50 +1,68 @@
+{/* necessary imports */}
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/assets'
 import Title from '../components/Title';
 import ProductItem from '../components/ProductItem';
+
+{/* Collection component renders the collection page of the website and organizes in a logical structure (top to bottom) that is easy for the user*/}
 const Collection = () => {
-
+  {/* useContext is used to access the ShopContext which contains the products, search, showSearch and setShowSearch functions */}
   const {products, search , showSearch} = useContext(ShopContext);
-  const [showFilter, setShowFilter] = useState(false);
-  const [filterProducts, setFilterProducts] = useState([]);
-  const [category, setCategory] = useState([]);
-  const [subCategory, setSubCategory] = useState([]);
-  const [sortType, setSortType] = useState('relevant');
 
+  {/* useState is used to manage the showFilter, filterProducts, category, subCategory and sortType states */}
+  const [showFilter, setShowFilter] = useState(false);
+
+  {/* filterProducts is used to manage the filtered products */}
+  const [filterProducts, setFilterProducts] = useState([]);
+
+  {/* category is used to manage the selected categories */}
+  const [category, setCategory] = useState([]);
+  
+  {/* subCategory is used to manage the selected subcategories */}
+  const [subCategory, setSubCategory] = useState([]);
+
+  {/* sortType is used to manage the selected sorting type */}
+  const [sortType, setSortType] = useState('relevant');
+  
+  {/* toggleCategory is used to manage the selected categories */}
   const toggleCategory = (e) => {
+    {/* if the category is already selected, remove it from the category array, else add it to the category array */}
     if (category.includes(e.target.value)){
       setCategory(prev=> prev.filter(item => item !== e.target.value));
 
     }
+    /* if the category is not already selected, add it to the category array */
     else{
       setCategory(prev=> [...prev, e.target.value]);
     }
 
   }
-
+  /* toggleSubCategory is used to manage the selected subcategories */
   const toggleSubCategory = (e) => {
+    /* if the subcategory is already selected, remove it from the subcategory array, else add it to the subcategory array */
     if (subCategory.includes(e.target.value)){
       setSubCategory(prev=> prev.filter(item => item !== e.target.value));
 
     }
+    /* if the subcategory is not already selected, add it to the subcategory array */
     else{
       setSubCategory(prev=> [...prev, e.target.value]);
     }
 
   }
-
+  /* applyFilter is used to filter the products based on the selected categories, subcategories and search term */
   const applyFilter = () => {
     let productsCopy = products.slice();
-
+    /* if the search term is not empty, filter the products based on the search term */
     if(showSearch && search){
       productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
     }
-
+    /* if the category array is not empty, filter the products based on the selected categories */
     if (category.length > 0){
       productsCopy = productsCopy.filter(item => category.includes(item.category));
     }
-
+    /* if the subcategory array is not empty, filter the products based on the selected subcategories */
     if (subCategory.length > 0){
       productsCopy = productsCopy.filter(item => subCategory.includes(item.subcategory));
     }
@@ -55,9 +73,10 @@ const Collection = () => {
 
   }
 
-
+  /* sortProduct is used to sort the products based on the selected sorting type (low to high, high to low, relvant)*/
   const sortProduct = () => {
     let fpCopy = filterProducts.slice();
+    /* if the sortType is 'relevant', do not sort the products */
     switch (sortType) {
       case 'low-high':
         setFilterProducts(fpCopy.sort((a,b)=>(a.price - b.price)));
@@ -70,17 +89,18 @@ const Collection = () => {
         break;
     }
   }
-
+ /* useEffect is used to apply the filter and sort the products whenever the category, subCategory, search and showSearch states change */
   useEffect(()=>{
     applyFilter();
 
   }, [category, subCategory, search, showSearch]);
-
+  
+  /* useEffect is used to sort the products whenever the sortType state changes */
   useEffect(()=>{
     sortProduct();
   },[sortType])
 
-
+  
   return (
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
       {/*filter options*/}

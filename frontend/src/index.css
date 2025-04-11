@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
+/*importing fonts from google fonts*/
 @import "tailwindcss";
+/*@import "tailwindcss/typography";*/
 
 a.active hr {
   display: block;
 }
 
+/*open sans font*/
 .open-sans-default {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
@@ -15,6 +17,7 @@ a.active hr {
     "wdth" 100;
 }
 
+/*cinzel font*/
 .cinzel-default {
   font-family: "Cinzel", serif;
   font-optical-sizing: auto;
@@ -22,10 +25,12 @@ a.active hr {
   font-style: normal;
 }
 
+/*disable scrollbar*/
 ::-webkit-scrollbar{
   display:none;
 }
 
+/*for cart total icon*/
 @media (max-width:640px){
   a.active{
     background-color:black;

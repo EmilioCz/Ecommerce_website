@@ -1,5 +1,6 @@
 import React from 'react'
 
+{/* NewsletterBox component is used to display the newsletter and subscription form box.*/}
 const NewsletterBox = () => {
 
     const onSubmitHandler = (event) => {

@@ -1,3 +1,4 @@
+{/* necessary imports */}
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext';
 import Title from '../components/Title';
@@ -5,13 +6,16 @@ import { assets } from '../assets/assets';
 import CartTotal from '../components/CartTotal';
 
 const Cart = () => {
-
+  {/* useContext is used to access the ShopContext which contains the products, currency, cartItems, updateQuantity and navigate functions */}
   const { products, currency, cartItems, updateQuantity, navigate } = useContext(ShopContext);
 
+  {/* useState is used to manage the cartData state which will hold the items in the cart */}
   const [cartData,setCartdata] = useState([]);
 
+  {/* useEffect is used to update the cartData state whenever the cartItems state changes */}
   useEffect(()=>{
 
+    {/* Use tempData before adding to cart */}
     const tempData = [];
     for(const items in cartItems){
       for(const item in cartItems[items]){
@@ -29,12 +33,13 @@ const Cart = () => {
 
   return (
     <div className='border-t pt-14 '>
-
+      {/* --------------Cart Title ------------------*/}
       <div className='text-2xl mb-3'>
         <Title text1={'YOUR'} text2={'CART'}/>
       </div>
-
+      {/* --------------Cart Items ------------------*/}
       <div>
+        {/* map cartData to display each item in the cart, for display include name, image, price, size, quantity */}
         {
           cartData.map((item,index)=>{
             const productData = products.find((product)=> product._id === item._id);
@@ -59,7 +64,7 @@ const Cart = () => {
           })
         }
       </div>
-
+        {/* --------------CheckOut button navigates to place order and display Cart Total component------------------*/}
       <div className='flex justify-end my-20'>
           <div className='w-full sm:w-[450px]'>
             <CartTotal />

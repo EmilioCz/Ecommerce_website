@@ -1,3 +1,5 @@
+{ /* Importing images from assets folder */}
+
 import logo from './logo.png';
 import search_icon from './search_icon.png';
 import profile_icon from './profile_icon.png';
@@ -26,6 +28,7 @@ import razorpay_logo from './razorpay_logo.png';
 import EmilioLinkedInPic from './EmilioLinkedInPic.jpg';
 import contact_img from './contact_img.png';
 
+{ /* Assets list needed for rest of website */ }
 export const assets = {
     // Add more assets as needed
   logo,
@@ -57,6 +60,7 @@ export const assets = {
   contact_img
 }
 
+{ /* Products list needed for Home/Collections page */ }
 export const products = [
   {
     _id: "aa",

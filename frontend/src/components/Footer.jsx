@@ -1,6 +1,9 @@
+{/* neccessary imports such as react, assets*/}
 import React from 'react'
 import { assets } from '../assets/assets'
 
+{/* Footer component renders the footer of the website and organizes in a logical structure (top to bottom) that is easy for the user
+  utilizing the logo, company information, and contact information */}
 const Footer = () => {
   return (
     <div>
@@ -14,6 +17,7 @@ const Footer = () => {
 
             
         </div>
+        
         <div>
             <p className='text-xl font-medium mb-5'>COMPANY</p>
             <ul className='flex flex-col gap-1 text-gray-600'>

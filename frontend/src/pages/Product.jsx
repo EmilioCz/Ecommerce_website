@@ -1,20 +1,31 @@
+{/* necessary imports */}
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/assets';
 import RelatedProducts from '../components/RelatedProducts';
 
+{/* Product component renders the product page of the website and organizes in a logical structure (top to bottom) that is easy for the user */}
 const Product = () => {
-
+  
+  {/* useParams is used to get the productId from URL*/}
   const {productId} = useParams();
+
+  {/* useContext is used to access the ShopContext which contains the products, currency, addToCart functions */}
   const {products, currency, addToCart} = useContext(ShopContext);
+
+  {/* useState is used to manage the productData, image and size states */}
   const [productData, setProductData] = useState(false);
+
+  {/* image is used to manage the selected image */}
   const [image, setImage] = useState('');
+
+  {/* size is used to manage the selected size */}
   const [size, setSize] = useState('');
 
-
+ 
   const fetchProductData = async () => {
-
+    {/* fetch product data from the products array based on the productId */}
     products.map((item)=>{
       if(item._id === productId){
         setProductData(item);
@@ -26,10 +37,12 @@ const Product = () => {
 
   }
 
+  {/* useEffect is used to fetch the product data whenever the productId or products state changes */}
   useEffect(()=>{
     fetchProductData();
 
   },[productId, products])
+  {/* return page content or dont if there is no productData */}
   return productData ? (
     <div className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
       {/* Product DATA */}
@@ -50,7 +63,7 @@ const Product = () => {
           </div>
         </div>
 
-        {/*Product Info */}
+        {/*Product Info such as price, rating and description*/}
         <div className='flex-1'>
           <h1 className='font-medium text-2xl mt-2'>{productData.name}</h1>
           <div className='flex items-center gap-1 mt-2'>
@@ -73,7 +86,8 @@ const Product = () => {
 
             </div>
           </div>
-          
+
+          {/* Add to cart button and other information */}
           <button onClick={()=>addToCart(productData._id, size)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
           <hr className='mt-8 sm:w-4/5'/>
           <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>

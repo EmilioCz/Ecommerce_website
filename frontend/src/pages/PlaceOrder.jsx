@@ -1,3 +1,4 @@
+{/* neccessary imports */}
 import React, { useContext, useState } from 'react'
 import Title from '../components/Title'
 import CartTotal from '../components/CartTotal'
@@ -12,7 +13,9 @@ const PlaceOrder = () => {
 
   return (
     <div className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
-      {/* --------------Left Side ------------------*/}
+      {/* --------------Left Side ------------------
+      contains delivery information such as first and last name, email, address, zip, phone number*/}
+
       <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
 
         <div className='text-xl sm:text-2xl my-3'>
@@ -36,7 +39,9 @@ const PlaceOrder = () => {
           <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="number" placeholder='Phone Number' />
         </div>
       </div>
-      {/* --------------Right Side ------------------*/}
+      {/* --------------Right Side ------------------
+      THis contains payment methods as well as cart total and lasly place order button*/}
+
       <div className='mt-8'>
         <div className='mt-8 min-w-80'>
           <CartTotal />

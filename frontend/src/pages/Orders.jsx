@@ -1,11 +1,13 @@
+{/*necessary imports*/}
 import React, { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title';
 
 const Orders = () => {
-
+ {/* useContext is used to access the ShopContext which contains the products and currency */}
   const {products, currency} = useContext(ShopContext);
 
+ {/* Orders returns the products that were added after place order button is pressed, displays them along with mock information as of now*/}
   return (
     <div className='border-t pt-16'>
 
@@ -26,7 +28,7 @@ const Orders = () => {
                       <p>Quantity: 1</p>
                       <p>Size: M</p>
                     </div>
-                    <p className='mt-2'>Date: <span className='text-gray-400'>25, July </span></p>
+                    <p className='mt-2'>Date: <span className='text-gray-400'>9, April </span></p>
                   </div>
                 </div>
                 <div className='md:w-1/2 flex justify-between'>

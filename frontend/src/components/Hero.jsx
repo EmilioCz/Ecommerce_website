@@ -1,5 +1,8 @@
+{/* necessary imports such as React and assets */}
 import React from 'react'
 import {assets} from '../assets/assets'
+
+{/* Hero component renders the main part of the website the user first sees, attracts customers, contains some attractive titles & images*/}
 const Hero = () => {
   return (
     <div className='flex flex-col sm:flex-row border border-gray-400'>

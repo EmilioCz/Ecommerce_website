@@ -1,3 +1,4 @@
+{/* necessary imports such as all the pages from the website, components and react-router-dom */}
 import React from 'react'
 import {Routes,Route } from 'react-router-dom'
 import Home from './pages/Home'
@@ -15,13 +16,14 @@ import SearchBar from './components/SearchBar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+{/* App component renders the main page of the website, routes and organizes in a logical structure (top to bottom) that is easy for the user */}
 const App = () => {
   return (
     <div className= 'bg-purple-200 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
-      <ToastContainer />
-      <Navbar />
-      <SearchBar />
-      <Routes>
+      <ToastContainer /> {/* ToastContainer is used to display notifications */}
+      <Navbar /> {/* Navbar component renders the navigation bar of the website */}
+      <SearchBar /> {/* SearchBar component renders the search bar of the website */}
+      <Routes> {/* Routes component is used to define the routes of the website */}
         <Route path='/' element={<Home/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/collection' element={<Collection/>} />
@@ -32,7 +34,7 @@ const App = () => {
         <Route path='/place-order' element={<PlaceOrder/>} />
         <Route path='/orders' element={<Orders/>} />
       </Routes>
-      <Footer />
+      <Footer /> {/* Footer component renders the footer of the website */}
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 
+{/* Title component is used to display the title of the section with two texts. */}
 const Title = ({text1,text2}) => {
   return (
     <div className='inline-flex gap-2 items-center mb-3'>

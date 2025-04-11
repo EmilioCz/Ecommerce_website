@@ -1,3 +1,4 @@
+{/*necessary imports such as React, useContext, useEffect, useState, and ShopContext*/}
 import React, {useContext, useEffect, useState} from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from './Title';

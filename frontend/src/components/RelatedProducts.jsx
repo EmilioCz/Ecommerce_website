@@ -1,13 +1,19 @@
+{/* necessary imports such as React, useContext, useEffect, useState, and ShopContext */}
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from './Title';
 import ProductItem from './ProductItem';
 
+{/* RelatedProducts component is used to display the related products based on the category and subcategory of the product. */}
 const RelatedProducts = ({category, subCategory}) => {
 
+    {/* useContext is used to access the ShopContext which contains the products */}
     const {products} = useContext(ShopContext);
+
+    {/* useState is used to manage the state of the related products */}
     const [related, setRelated] = useState([]);
 
+    {/* useEffect is used to filter the products based on the category and subcategory */}
     useEffect(() => {
         if(products.length > 0){
             let productsCopy = products.slice();
