@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
     {/*currency, delivery fee are necessary hardcoded values for placeorder page/collections etc...*/}
     const currency = '$';
     const delivery_fee = 10;
+    
     {/* useState is used to manage the products, search, showSearch and cartItems states */}
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
