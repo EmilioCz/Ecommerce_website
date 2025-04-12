@@ -201,7 +201,11 @@ Static Pages                  | Contact, About, Orders, Login
 
 ## Third-party libraries used and why
 -React + Vite these are used for the overall setup of the website(JavaScript,CSS,HTML, necessary files).
+
 -ToastContainer is used for the purpose of requiring the user to select a size when adding a product to cart.
+
 -Google Fonts is used to help style the fonts in pages (in certain areas) such as Sign up page, and Home page.
+
 -TailWind CSS for styling different divs etc, used all over the site.
--React-Router-Dom is used z
+
+-React-Router-Dom is used for routing/navigation
